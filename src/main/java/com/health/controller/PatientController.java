@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("api/patients")
 //@AllArgsConstructor
 @RequiredArgsConstructor
 // @CrossOrigin(origins = "*")
