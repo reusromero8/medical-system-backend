@@ -20,7 +20,7 @@ public class FamilyServiceImpl implements IFamilyService {
     private final MapperUtil mapperUtil;
 
     @Override
-    public List<FamilyDTO> findAll() {
+    public List<FamilyDTO> findAll() throws Exception {
         List<Family> families = repo.findAll();
         return families.stream()
                 .map(family -> mapperUtil.map(family, FamilyDTO.class))
@@ -28,7 +28,7 @@ public class FamilyServiceImpl implements IFamilyService {
     }
 
     @Override
-    public FamilyDTO findById(Integer id) {
+    public FamilyDTO findById(Integer id) throws Exception {
         Family family = repo.findById(id)
                 .orElseThrow(() -> new ModelNotFoundException("Family not found with ID: " + id));
         return mapperUtil.map(family, FamilyDTO.class);
